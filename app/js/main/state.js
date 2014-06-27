@@ -1,4 +1,4 @@
-// Application Level State
+// Sub-application/main Level State
 app.config(['$stateProvider', function($stateProvider) {
 
   $stateProvider
