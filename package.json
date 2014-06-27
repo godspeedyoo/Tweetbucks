@@ -1,9 +1,9 @@
 {
-  "name": "angular-seed",
+  "name": "angular-ui-seed",
   "private": true,
   "version": "0.0.0",
   "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
+  "repository": "https://github.com/dokko1230/angular-ui-seed",
   "license": "MIT",
   "devDependencies": {
     "karma": "~0.10",

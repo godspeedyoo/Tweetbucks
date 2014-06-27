@@ -19,7 +19,7 @@ describe('my app', function() {
 
 
     it('should render home when user navigates to /home', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
+      expect(element.all(by.css('[ui-view] p')).first().getText()).
         toMatch(/This is home/);
     });
 
@@ -34,7 +34,7 @@ describe('my app', function() {
 
 
     it('should render about when user navigates to /about', function() {
-      expect(element.all(by.css('[ng-view] p')).first().getText()).
+      expect(element.all(by.css('[ui-view] p')).first().getText()).
         toMatch(/This is about/);
     });
 
