@@ -11,8 +11,7 @@ app.config(['$stateProvider', function($stateProvider) {
           controller: 'NavbarCtrl'
         },
         'main': {
-          templateUrl: 'js/core/templates/main.tpl.html',
-          controller: 'MainCtrl'
+          templateUrl: 'js/core/templates/main.tpl.html'
         }
       }
     })
