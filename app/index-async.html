@@ -29,29 +29,32 @@
     // load all of the dependencies asynchronously.
     $script([
       'bower_components/angular/angular.js',
-      'bower_components/angular-route/angular-route.js',
+      'bower_components/angular-ui-router/release/angular-ui-router.js',
       'js/app.js',
-      'js/services.js',
-      'js/controllers.js',
-      'js/filters.js',
-      'js/directives.js'
+      'js/core/services/VersionService.js',
+      "js/core/filters/VersionFilter.js",
+      "js/core/directives/VersionDirective.js",
+      "js/core/state.js",
+      "js/core/controllers/AppCtrl.js",
+      "js/core/controllers/NavbarCtrl.js",
+      "js/main/state.js",
+      "js/main/controllers/HomeCtrl.js",
+      "js/main/controllers/AboutCtrl.js",
+      "js/main/controllers/ContactCtrl.js"
     ], function() {
       // when all is done, execute bootstrap angular application
-      angular.bootstrap(document, ['myApp']);
+      angular.bootstrap(document, ['app']);
     });
   </script>
   <title>My AngularJS App</title>
   <link rel="stylesheet" href="css/app.css">
 </head>
 <body ng-cloak>
-  <ul class="menu">
-    <li><a href="#/view1">view1</a></li>
-    <li><a href="#/view2">view2</a></li>
-  </ul>
 
-  <div ng-view></div>
+  <div ui-view="navbar"></div>
 
-  <div>Angular seed app: v<span app-version></span></div>
+  <div class="main" ui-view="main"></div>
+
 
 </body>
 </html>
