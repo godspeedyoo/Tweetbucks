@@ -1,4 +1,4 @@
-//Application Level State
+// Application Level State
 app.config(['$stateProvider', function($stateProvider) {
 
   $stateProvider

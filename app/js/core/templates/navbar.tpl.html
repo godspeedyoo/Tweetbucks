@@ -1,2 +1,11 @@
-<div class="sidebar-item" ui-sref-active="sidebar-active"><a ui-sref="home">Home</a></div>
-<div class="sidebar-item" ui-sref-active="sidebar-active"><a ui-sref="things">Things</a></div>
+
+<div class="container">
+  <div class="row">
+    <ul class="nav">
+      <li ng-repeat="item in items" class="navbar-item" ui-sref-active="navbar-active">
+        <a ui-sref="app.{{ item | lowercase }}">{{ item }}</a>
+      </li>
+    </ul>
+    
+  </div>
+</div>
