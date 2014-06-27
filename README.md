@@ -1,8 +1,8 @@
 # angular-ui-seed — the seed for AngularJS apps
 
-This project is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
+This project seed is an application skeleton for a typical [AngularJS](http://angularjs.org/) web app.
 You can use it to quickly bootstrap your angular webapp projects and dev environment for these
-projects.
+projects. It uses angular [ui-router](https://github.com/angular-ui/ui-router) to create multiple named views as well as nested views.
 
 The seed contains a sample AngularJS application and is preconfigured to install the Angular
 framework and a bunch of development and testing tools for instant web development gratification.
