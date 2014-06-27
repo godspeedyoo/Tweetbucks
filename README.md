@@ -75,7 +75,6 @@ Now browse to the app at `http://localhost:8000/app/index.html`.
         app.css         --> default stylesheet
       img/              --> image files
       index.html        --> app layout file (the main html template file of the app)
-      index-async.html  --> just like index.html, but loads js files asynchronously
       js/               --> javascript files
         core/           --> core files
           controllers/  --> core controllers
@@ -208,21 +207,6 @@ bower update
 ```
 
 This will find the latest versions that match the version ranges specified in the `bower.json` file.
-
-
-## Loading Angular Asynchronously
-
-The angular-seed project supports loading the framework and application scripts asynchronously.  The
-special `index-async.html` is designed to support this style of loading.  For it to work you must
-inject a piece of Angular JavaScript into the HTML page.  The project has a predefined script to help
-do this.
-
-```
-npm run update-index-async
-```
-
-This will copy the contents of the `angular-loader.js` library file into the `index-async.html` page.
-You can run this every time you update the version of Angular that you are using.
 
 
 ## Serving the Application Files
