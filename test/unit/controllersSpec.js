@@ -3,7 +3,7 @@
 /* jasmine specs for controllers go here */
 
 describe('controllers', function(){
-  beforeEach(module('app.controllers'));
+  beforeEach(module('app'));
 
 
   it('should ....', inject(function($controller) {
