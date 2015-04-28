@@ -42,3 +42,23 @@ body {
     -moz-box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
     box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
 }
+
+.tweet-box {
+  background-color: #c0deed;
+  padding: 15px;
+  border-radius: 3px;
+  border: 1px solid #e2fffe;
+}
+
+textarea {
+  width: 100%;
+  resize: none;
+  border: none;
+  border-radius; 2px;
+  border: 1px solid #00aced;
+}
+
+.tweet-button {
+  margin: 5px;
+  margin-bottom: 0px;
+}
