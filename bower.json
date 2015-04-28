@@ -1,8 +1,8 @@
 {
-  "name": "angular-ui-seed",
-  "description": "A starter project for AngularJS",
+  "name": "Tweetbucks",
+  "description": "A way to tweet out payments",
   "version": "0.0.2",
-  "homepage": "https://github.com/dokko1230/angular-ui-seed",
+  "homepage": "",
   "license": "MIT",
   "dependencies": {
     "angular": "latest",
