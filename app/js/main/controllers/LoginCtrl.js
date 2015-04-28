@@ -4,7 +4,11 @@ app.controller('LoginCtrl', ['$rootScope','$scope', '$state', function($rootScop
 		OAuth.initialize('ZEezHY42tLMdO9i2rKNBAgAxdak')
 		OAuth.popup('twitter').done(function(result) {
 	    $rootScope.authResult = result;
-	    $state.go('app.home');
+	    result.me().done(function(data) {
+	    	$rootScope.me = data;
+				})
+	    $state.reload();
+	    $state.go('app.home', {reload: true});
 		}).fail(function(error) {
 			alert(error.message);
 		})
