@@ -6,11 +6,12 @@ app.factory('TweetFactory', ['$rootScope', function($rootScope) {
 
 	var url = "/1.1/statuses/user_timeline.json";
 	tweets.getTweets = function() {
-		$rootScope.twitterOAuthResult.get(url).success(function(response) {
-			$rootScope.tweets = response;
-			// show the home page once tweets are retrieved
-			$rootScope.go('/home');
-		})
+		return $rootScope.twitterOAuthResult.get(url)
+			// .success(function(response) {
+			// 	$rootScope.tweets = response;
+			// 	// show the home page once tweets are retrieved
+			// 	$rootScope.go('/home');
+			// })
 	};
 
 	tweets.postTweet = function(text) {
