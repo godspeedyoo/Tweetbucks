@@ -1,6 +1,14 @@
 
-<div class="jumbotron text-center">
-	<button ng-click="authenticate('twitter')" class="btn btn-lg btn-twitter">Log in with Twitter</button>
-	<button ng-click="authenticate('paypal')" class="btn btn-lg btn-paypal">Log in with Paypal</button>
+<div class="center">
+	<div class="login panel">
+		<a ng-click="authenticate('twitter')" class="btn btn-block btn-social btn-twitter">
+	  		<i class="fa fa-twitter"></i>
+	  		Sign in with Twitter
+		</a>
+		<a ng-click="authenticate('paypal')" class="btn btn-block btn-default">
+	  		<i class="fa fa-paypal"></i>
+	  		Sign in with Paypal
+		</a>
+	</div>
 
 </div>

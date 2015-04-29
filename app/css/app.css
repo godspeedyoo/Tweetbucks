@@ -50,6 +50,15 @@ body {
   border: 1px solid #e2fffe;
 }
 
+.panel {
+  width: 330px;
+  margin: 12% auto;
+  padding: 15px;
+  border-color: #cfd9D7;
+  border-radius: 2px;
+  box-shadow: 0 8px 17px rgba(0, 0, 0, .2);
+}
+
 textarea {
   width: 100%;
   resize: none;
