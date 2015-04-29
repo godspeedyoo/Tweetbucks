@@ -19,6 +19,7 @@ function($rootScope, $scope, $state, TweetFactory, $cookies) {
 	    	$rootScope.twitterOAuthResult = response;
 	    	$cookies.twitter_token = response.oauth_token;
 	    	$scope.twitterAuthorized = true;
+	    	TweetFactory.getTweets();
 	    };
 	    
 	    if (provider === 'paypal') { 
@@ -28,7 +29,6 @@ function($rootScope, $scope, $state, TweetFactory, $cookies) {
 	    };
 
 	    // Retrieve user's latest tweet data to populate home feed
-	    TweetFactory.getTweets();
 
 		}).fail(function(error) {
 				console.log(error.message);

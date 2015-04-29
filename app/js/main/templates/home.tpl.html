@@ -1,6 +1,11 @@
 <div class="col-sm-3 text-left">
-	<h2>PROFILE NAME</h2>
-	<p>lorem ip sum dost iv</p>
+	<div class="row">
+		<h2>PROFILE NAME</h2>
+		<p>lorem ip sum dost iv</p>
+	</div>
+	<div clss="row">
+		<p>Details here</p>
+	</div>
 </div>
 
 <div class="col-sm-9">
@@ -8,14 +13,16 @@
 	<div class="row">
 		<div class="col-sm-8 col-sm-offset-2 tweet-box">
 			<textarea ng-model="text" class="tweet-text"></textarea>
-			<button ng-click="postTweet(text)"class="btn btn-primary pull-right tweet-button">Tweet</button>	
+			<span class="text-muted">{{140 - text.length}}</span><button ng-click="postTweet(text)"class="btn btn-primary pull-right tweet-button">Tweet</button>	
 		</div>	
 	</div>
-	<div class="row">
 
-		<ul>
-			<li ng-repeat="tweet in tweets">{{tweet.text}}</li>
-		</ul>
+	<div class="row">
+		<div>
+			<ul>
+				<li ng-repeat="tweet in tweets">{{tweet.text}}</li>
+			</ul>
+		</div>
 	</div>
 </div>
 
