@@ -18,13 +18,13 @@ function($rootScope, $scope, $state, TweetFactory, $cookies) {
 	    if (provider === 'twitter') { 
 	    	$rootScope.twitterOAuthResult = response;
 	    	$cookies.twitter_token = response.oauth_token;
-	    	$scope.twitter_authorized = true;
+	    	$scope.twitterAuthorized = true;
 	    };
 	    
 	    if (provider === 'paypal') { 
 	    	$rootScope.paypalOAuthResult = response 
 	    	$cookies.paypal_token = response.oauth_token;
-	    	$scope.paypal_authorized = true;
+	    	$scope.paypalAuthorized = true;
 	    };
 
 	    // Retrieve user's latest tweet data to populate home feed
@@ -38,8 +38,8 @@ function($rootScope, $scope, $state, TweetFactory, $cookies) {
 	$scope.logout = function() {
 		$cookies.twitter_token = null;
 		$cookies.paypal_token = null;
-		$scope.twitter_authorized = false;
-		$scope.paypal_authorized = false;
+		$scope.twitterAuthorized = false;
+		$scope.paypalAuthorized = false;
 	};
 
 }]);

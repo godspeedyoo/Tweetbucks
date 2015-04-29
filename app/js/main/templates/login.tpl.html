@@ -1,11 +1,11 @@
 
 <div class="center">
 	<div class="login panel">
-		<a ng-click="authenticate('twitter')" class="btn btn-block btn-social btn-twitter">
+		<a ng-show="!twitterAuthorized" ng-click="authenticate('twitter')" class="btn btn-block btn-social btn-twitter">
 	  		<i class="fa fa-twitter"></i>
 	  		Sign in with Twitter
 		</a>
-		<a ng-click="authenticate('paypal')" class="btn btn-block btn-default">
+		<a ng-show="!paypalAuthorized" ng-click="authenticate('paypal')" class="btn btn-block btn-default">
 	  		<i class="fa fa-paypal"></i>
 	  		Sign in with Paypal
 		</a>
