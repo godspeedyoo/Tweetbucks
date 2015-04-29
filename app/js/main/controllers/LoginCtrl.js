@@ -5,7 +5,13 @@ app.controller('LoginCtrl', [
 	'TweetFactory',
 	'TwitterUserFactory',
 	'$cookies', 
-function($rootScope, $scope, $state, TweetFactory, TwitterUserFactory, $cookies) {
+function(
+		$rootScope, 
+		$scope, 
+		$state, 
+		TweetFactory, 
+		TwitterUserFactory, 
+		$cookies) {
 
 	$scope.twitter_authorized = false;
 	$scope.paypal_authorized = false;
@@ -20,8 +26,12 @@ function($rootScope, $scope, $state, TweetFactory, TwitterUserFactory, $cookies)
 	    	$rootScope.twitterOAuthResult = response;
 	    	// $cookies.twitter_token = response.oauth_token; // enable storing cookies once app.run is configured to check login
 	    	$scope.twitterAuthorized = true;
+
+	    	// Load all necessary data upon login and serve through app - need a strategy to accomodate live update or stream API
 	    	TweetFactory.getTweets();
 	    	TwitterUserFactory.getFollowers();
+	    	TwitterUserFactory.getFriends();
+	    	TwitterUserFactory.getMe();
 	    };
 	    
 	    if (provider === 'paypal') { 
@@ -29,9 +39,6 @@ function($rootScope, $scope, $state, TweetFactory, TwitterUserFactory, $cookies)
 	    	// $cookies.paypal_token = response.oauth_token; // enable storing cookies once app.run is configured to check login
 	    	$scope.paypalAuthorized = true;
 	    };
-
-	    // Retrieve user's latest tweet data to populate home feed
-
 		}).fail(function(error) {
 				console.log(error.message);
 		});

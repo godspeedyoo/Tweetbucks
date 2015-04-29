@@ -17,7 +17,10 @@ body {
 .nav {
   list-style-type: none;
   padding: 0;
-  border-bottom: 1px solid #00aced;
+  border-color: #cfd9D7;
+  border-radius: 2px;
+  box-shadow: 0 0 17px rgba(0, 0, 0, .2);
+
 }
 
 .nav li {
@@ -44,20 +47,16 @@ body {
     box-shadow: 0 0 0 3px #fff, 0 0 0 4px #999, 0 2px 5px 4px rgba(0,0,0,.2);
 }
 
-.tweet-box {
-  background-color: #eeeeee;
-  padding: 15px;
-  border-radius: 3px;
-  border: 1px solid #00aced;
-}
-
 .panel {
-  width: 330px;
-  margin: 12% auto;
   padding: 15px;
   border-color: #cfd9D7;
   border-radius: 2px;
   box-shadow: 0 8px 17px rgba(0, 0, 0, .2);
+}
+
+.panel-login {
+  width: 330px;
+  margin: 12% auto;
 }
 
 textarea {
@@ -71,4 +70,4 @@ textarea {
 .tweet-button {
   margin: 5px;
   margin-bottom: 0px;
-}
+}   

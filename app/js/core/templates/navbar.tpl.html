@@ -1,12 +1,10 @@
-
 <div class="container-fluid">
   <div class="row">
     <ul class="nav">
       <li ng-repeat="item in items" class="navbar-item" ui-sref-active="navbar-active">
         <a ui-sref="app.{{ item | lowercase }}">{{ item }}</a>
       </li>
-		<img class="avatar pull-right" alt="avatar" ng-src="{{me.avatar}}" ng-show="me.avatar"></img>
-
+	<img class="avatar pull-right" alt="avatar" ng-src="{{me.avatar}}" ng-show="me.avatar"></img>
     </ul>
     
   </div>
