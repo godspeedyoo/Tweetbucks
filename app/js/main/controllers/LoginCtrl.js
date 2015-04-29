@@ -17,14 +17,14 @@ function($rootScope, $scope, $state, TweetFactory, $cookies) {
 	    
 	    if (provider === 'twitter') { 
 	    	$rootScope.twitterOAuthResult = response;
-	    	$cookies.twitter_token = response.oauth_token;
+	    	// $cookies.twitter_token = response.oauth_token; // enable storing cookies once app.run is configured to check login
 	    	$scope.twitterAuthorized = true;
 	    	TweetFactory.getTweets();
 	    };
 	    
 	    if (provider === 'paypal') { 
 	    	$rootScope.paypalOAuthResult = response 
-	    	$cookies.paypal_token = response.oauth_token;
+	    	// $cookies.paypal_token = response.oauth_token; // enable storing cookies once app.run is configured to check login
 	    	$scope.paypalAuthorized = true;
 	    };
 

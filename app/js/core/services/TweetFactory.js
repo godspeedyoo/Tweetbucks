@@ -3,8 +3,8 @@
 app.factory('TweetFactory', ['$rootScope', function($rootScope) {
 
 	var tweets = {};
-	var url = "https://api.twitter.com/1.1/statuses/user_timeline.json";
 
+	var url = "/1.1/statuses/user_timeline.json";
 	tweets.getTweets = function() {
 		$rootScope.twitterOAuthResult.get(url).success(function(response) {
 			$rootScope.tweets = response;
