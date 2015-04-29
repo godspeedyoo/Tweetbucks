@@ -1,11 +1,11 @@
 <p>This is home</p>
 
-<div class="tweet-box col-lg-8 col-lg-offset-2 col-md-6 col-md-offset-2 col-sm-offset-2 col-sm-4 col-xs-3 col-xs-offset-2">
-	<img class="avatar" alt="avatar" ng-src="{{me.avatar}}" ng-show="me.avatar"></img>
+<div class="tweet-box col-lg-8 col-lg-offset-2 col-md-6 col-md-offset-3 col-sm-offset-3 col-sm-5 col-xs-4 col-xs-offset-2">
 	<form action="post">
+		<img class="avatar" alt="avatar" ng-src="{{me.avatar}}" ng-show="me.avatar"></img>
 		<textarea class="tweet-text"></textarea>
+		<div>
+			<button class="btn btn-primary pull-right tweet-button">Tweet</button>
+		</div>
 	</form>
-	<div>
-		<button class="btn btn-primary pull-right tweet-button">Tweet</button>
-	</div>
 </div>
