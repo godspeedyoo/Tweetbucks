@@ -1,12 +1,15 @@
-app.controller('LoginCtrl', ['$rootScope','$scope', '$state', function($rootScope, $scope, $state) {
+app.controller('LoginCtrl', ['$rootScope','$scope', '$state', 'TweetFactory', function($rootScope, $scope, $state, TweetFactory) {
 
 	$scope.authenticate = function(Oauth) {
 		OAuth.initialize('ZEezHY42tLMdO9i2rKNBAgAxdak')
-		OAuth.popup('twitter').done(function(result) {
-	    $rootScope.authResult = result;
-	    $rootScope.getTweets();
+		OAuth.popup('twitter').done(function(response) {
+	    $rootScope.OAuthResult = response;
+
+	    // Retrieve user's latest tweet data to populate home feed
+	    TweetFactory.getTweets();
+
 	    // store user data - abstract elsewhere for profile ctrl
-	    result.me().done(function(data) {
+	    response.me().done(function(data) {
 	    	$rootScope.me = data;
 	    	$rootScope.user_id = data.id;
 				})
