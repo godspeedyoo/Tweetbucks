@@ -1,7 +1,8 @@
 <div class="col-sm-3 text-left">
 	<div class="row">
-		<h2>PROFILE NAME</h2>
-		<p>lorem ip sum dost iv</p>
+		<img class="avatar-profile" ng-show="me.avatar" ng-src="{{me.raw.profile_image_url_https}}" alt="avatar"></img>
+		<h2>{{me.name}}</h2>
+		<p>{{me.bio}}</p>
 	</div>
 	<div clss="row">
 		<p>Details here</p>
@@ -11,23 +12,37 @@
 <div class="col-sm-9">
 <!-- <div class="tweet-box col-lg-8 col-lg-offset-2 col-md-6 col-md-offset-3 col-sm-offset-3 col-sm-5 col-xs-4 col-xs-offset-2"> -->
 	<div class="row">
-		<div class="col-sm-8 col-sm-offset-2 panel">
-			<textarea ng-model="text" class="tweet-text"></textarea>
+		<div class="panel">
+			<textarea ng-model="text" class="tweet-input-text"></textarea>
 			<span class="text-muted">{{140 - text.length}}</span><button ng-click="postTweet(text)"class="btn btn-primary pull-right tweet-button">Tweet</button>	
 		</div>	
 	</div>
 
 	<div class="row">
-		<div>
-			<ul>
-				<li ng-repeat="tweet in tweets">{{tweet.text}}</li>
-			</ul>
+		<div class="panel">
+			<div class="tweet-container" ng-repeat="tweet in tweets">
+				<div class="row">
+					<div class="tweet-header">
+						<img class="tweet-avatar" ng-show="me.avatar" ng-src="{{me.avatar}}"></img>
+						<span class="tweet-author">@{{me.alias}}</span> tweeted {{tweet.created_at | date: 'short'}}
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="tweet-text">
+						{{tweet.text}}
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
-Followers: {{followers}}
 
-<br>
-
-Friends: {{friends}}
-
+<ul>
+	<h1>Me:</h1>
+	{{me}}
+	<h1>Followers:</h1>
+	<li ng-repeat="follower in followers">{{follower}}</li>
+	<h1>Friends:</h1>
+	<li ng-repeat="friend in friends">{{friend}}</li>
+</ul>
