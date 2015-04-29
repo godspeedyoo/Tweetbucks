@@ -3,8 +3,9 @@ app.controller('LoginCtrl', [
 	'$scope', 
 	'$state', 
 	'TweetFactory',
+	'TwitterUserFactory',
 	'$cookies', 
-function($rootScope, $scope, $state, TweetFactory, $cookies) {
+function($rootScope, $scope, $state, TweetFactory, TwitterUserFactory, $cookies) {
 
 	$scope.twitter_authorized = false;
 	$scope.paypal_authorized = false;
@@ -20,6 +21,7 @@ function($rootScope, $scope, $state, TweetFactory, $cookies) {
 	    	// $cookies.twitter_token = response.oauth_token; // enable storing cookies once app.run is configured to check login
 	    	$scope.twitterAuthorized = true;
 	    	TweetFactory.getTweets();
+	    	TwitterUserFactory.getFollowers();
 	    };
 	    
 	    if (provider === 'paypal') { 
