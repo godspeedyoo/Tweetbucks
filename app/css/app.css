@@ -60,14 +60,22 @@ body {
 }
 
 textarea {
+  padding: 5px;
   width: 100%;
   resize: none;
-  border: none;
+  border-color: #cfd9D7;
   border-radius; 2px;
-  border: 1px solid #e2fffe;
 }
 
 .tweet-button {
   margin: 5px;
   margin-bottom: 0px;
 }   
+
+.btn-social:active {
+  -webkit-box-shadow: none;
+}
+
+.btn-block {
+  border: 1px solid #cfd9D7;
+}

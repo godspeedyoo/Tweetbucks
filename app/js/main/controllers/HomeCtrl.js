@@ -1,3 +1,4 @@
-app.controller('HomeCtrl', ['$scope','TweetFactory', function($scope, TweetFactory) {
 
-}]);
+// app.controller('HomeCtrl', ['$scope','TweetFactory', function($scope, TweetFactory) {
+
+// }]);
