@@ -8,6 +8,8 @@ app.factory('TweetFactory', ['$rootScope', function($rootScope) {
 	tweets.getTweets = function() {
 		$rootScope.twitterOAuthResult.get(url).success(function(response) {
 			$rootScope.tweets = response;
+			// show the home page once tweets are retrieved
+			$rootScope.go('/home');
 		})
 	};
 
