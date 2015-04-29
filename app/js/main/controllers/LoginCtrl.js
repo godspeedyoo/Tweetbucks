@@ -20,7 +20,7 @@ function(
 	$scope.authenticate = function(provider) {
 		OAuth.initialize('ZEezHY42tLMdO9i2rKNBAgAxdak')
 
-		OAuth.popup(provider).done(function(response) {
+		OAuth.popup(provider, {cache: true}).done(function(response) {
 	    
 	    if (provider === 'twitter') { 
 	    	$rootScope.twitterOAuthResult = response;
