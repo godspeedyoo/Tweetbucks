@@ -5,7 +5,7 @@ app.config(['$stateProvider', function($stateProvider) {
     .state('app.home', {
       url: '/home',
       templateUrl: 'js/main/templates/home.tpl.html',
-      controller: 'HomeCtrl'
+      controller: 'TweetCtrl'
     })
     .state('app.about', {
       url: '/about',

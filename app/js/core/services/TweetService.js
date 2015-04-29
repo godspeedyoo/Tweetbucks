@@ -1,12 +1,14 @@
 'use strict';
 
-app.factory('TweetFactory', ['$scope','$rootScope', function($scope, $rootScope) {
-	return {
-		$scope.getTweets = function() {
-      var url = "/1.1/statuses/home_timeline.json";
-      $rootScope.me.get(url).done(function(response) {
-      	console.log(response);
-      })
-		}
-	}
+app.factory('TweetFactory', ['$http', function($http) {
+	
+  var url = "https://api.twitter.com/1.1/statuses/user_timeline.json";
+	var tweets = {};
+
+	tweets.getTweets = function(user_id) {
+		return $http.get(url + '?user_id=' +user_id);
+	};
+
+	return tweets;
+	
 }])
