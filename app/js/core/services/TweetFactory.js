@@ -3,19 +3,15 @@
 app.factory('TweetFactory', ['$rootScope', function($rootScope) {
 
 	var tweets = {};
-
-	var url = "/1.1/statuses/user_timeline.json";
+	var postUrl = '/1.1/statuses/update.json';
+	var getUrl = '/1.1/statuses/user_timeline.json';
+	
 	tweets.getTweets = function() {
-		return $rootScope.twitterOAuthResult.get(url)
-			// .success(function(response) {
-			// 	$rootScope.tweets = response;
-			// 	// show the home page once tweets are retrieved
-			// 	$rootScope.go('/home');
-			// })
+		return $rootScope.twitterOAuthResult.get(getUrl);
 	};
 
 	tweets.postTweet = function(text) {
-		$rootScope.twitterOAuthResult.post('/1.1/statuses/update.json', {
+		$rootScope.twitterOAuthResult.post(postUrl, {
 	  	data: {
     		status: text
 			}
