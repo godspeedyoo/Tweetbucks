@@ -3,7 +3,7 @@ app.controller('LoginCtrl', ['$rootScope','$scope', '$state', 'TweetFactory', fu
 	$scope.authenticate = function(Oauth) {
 		OAuth.initialize('ZEezHY42tLMdO9i2rKNBAgAxdak')
 		OAuth.popup('twitter').done(function(response) {
-	    $rootScope.OAuthResult = response;
+	    $rootScope.twitterOAuthResult = response;
 
 	    // Retrieve user's latest tweet data to populate home feed
 	    TweetFactory.getTweets();
