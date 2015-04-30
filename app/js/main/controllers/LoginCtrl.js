@@ -4,6 +4,7 @@ app.controller('LoginCtrl', [
 	'$state', 
 	'TweetFactory',
 	'TwitterUserFactory',
+	'PaypalFactory',
 	'$cookies', 
 function(
 		$rootScope, 
@@ -11,6 +12,7 @@ function(
 		$state, 
 		TweetFactory, 
 		TwitterUserFactory, 
+		PaypalFactory,
 		$cookies) {
 
 	$scope.twitter_authorized = false;
@@ -52,8 +54,12 @@ function(
 	    };
 	    
 	    if (provider === 'paypal') { 
-	    	debugger;
-	    	$rootScope.paypalOAuthResult = response 
+	    	$rootScope.paypalOAuthResult = response;
+	    	
+	    	PaypalFactory.getMe().then(function(response) {
+	    		debugger;
+	    	}).fail(function(response) { alert('Failed') });
+
 	    };
 		}).fail(function(error) {
 				console.log(error.message);

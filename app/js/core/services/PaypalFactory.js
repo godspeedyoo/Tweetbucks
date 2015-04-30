@@ -8,7 +8,7 @@ app.factory('PaypalFactory', ['$rootScope', function($rootScope) {
 	var userInfoUrl = 'v1/identify/openidconnect/userinfo/?schem=openid';
 
 	paypal.getMe = function() {
-		return $rootScope.paypalOAuthResult.get(baseUrl + userInfoUrl);
+		return $rootScope.paypalOAuthResult.me();
 	};
 
 	return paypal;
