@@ -56,14 +56,13 @@ function(
 	    if (provider === 'paypal') { 
 	    	$rootScope.paypalOAuthResult = response;
 	    	
-	    	PaypalFactory.getMe().then(function(response) {
-	    		debugger;
-	    	}).fail(function(response) { alert('Failed') });
+	 //    	PaypalFactory.getMe().then(function(response) {
+	 //    	}).fail(function(response) { alert('Failed') });
 
-	    };
-		}).fail(function(error) {
-				console.log(error.message);
-		});
+	 //    };
+		// }).fail(function(error) {
+		// 		console.log(error.message);
+		// });
 	}
 
 	$scope.logout = function() {
