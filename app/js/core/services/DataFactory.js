@@ -6,12 +6,12 @@ app.factory('DataService', ['$rootScope', function($rootScope) {
 
 	data.updateOAuthResult = function(result) {
 		this.twitterOAuthResult = result;
-		$rootScope.$broadcast("valuesUpdated");
+		$rootScope.$broadcast("loginUpdated");
 	}
 
 	data.updateTweets = function(tweets) {
 		this.tweets = tweets;
-		$rootScope.$broadcast("valuesUpdated");
+		$rootScope.$broadcast("tweetsUpdated");
 	}
 
 	return data;

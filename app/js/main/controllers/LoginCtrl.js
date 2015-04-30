@@ -17,19 +17,38 @@ function(
 		DataService,
 		$cookies) {
 
-	$scope.twitter_authorized = false;
-	$scope.paypal_authorized = false;
+	// ********************* NOTES *********************
+	// instead of directly applying event services to $rootScope,
+	// consider using 'somethingEventService' when extending multiple listeners 
+	// so as not to clutter the $rootScope events. Example:
+	// 	app.service("newEventService", function($rootScope) {
+	// 			this.broadcast = function() { $rootScope.$broadcast("event")}
+	// 			this.listen = function(callback) {$rootScope.$on("event", callback)}
+	// })
 
-	$scope.$on('valuesUpdated',function() { alert("Updated") });
+	// specify event listener/callback for when my DataService values get updated
+	$rootScope.$on('loginUpdated',function() { 
+		// use specific session type if multiple logins are implemented i.e. $scope.paypalAuthResult
+		$scope.authResult = DataService.twitterOAuthResult;
+	});
+
+	// listen for tweets data update
+	$rootScope.$on('tweetsUpdated', function() {
+		$scope.tweets = DataService.tweets;
+		alert("tweets updated");
+	})
 
 	$scope.authenticate = function(provider) {
+		// OAuth handler via popup
 		OAuth.initialize('ZEezHY42tLMdO9i2rKNBAgAxdak');
-
 		OAuth.popup(provider, {cache: true}).done(function(response) {
     	$rootScope.twitterOAuthResult = response;
-
     	DataService.updateOAuthResult(response);
     });
+
+  	TweetFactory.getTweets().success(function(tweets) {
+  		DataService.updateTweets(tweets);
+  	});
 	};
 
 
