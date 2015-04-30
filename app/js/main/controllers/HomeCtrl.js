@@ -18,7 +18,7 @@ app.controller('HomeCtrl', [
 	};
 
 	// check for cached user and load user data if it exists (needs SSL)
-	if ($cookies.oauthio_provider_twitter) { LoginService.getCachedUser() }
+	// if ($cookies.oauthio_provider_twitter) { LoginService.getCachedUser() }
 
 
 	// initialize data upon load
