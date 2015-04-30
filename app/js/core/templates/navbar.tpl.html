@@ -4,6 +4,13 @@
       <li ng-repeat="item in items" class="navbar-item" ui-sref-active="navbar-active">
         <a ui-sref="app.{{ item | lowercase }}">{{ item }}</a>
       </li>
+
+      <li class="navbar-item pull-right" ui-sref-active="navbar-active">
+      	<button class="btn btn-warning" ng-click="logout()">Logout</button>
+      </li>
+      <li class="navbar-item pull-right" ui-sref-active="navbar-active">
+      	<button class="btn btn-success" ui-sref="app.login">Login</button>
+      </li>
     </ul>
     
   </div>

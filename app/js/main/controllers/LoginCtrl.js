@@ -31,13 +31,11 @@ function(
 	    	TweetFactory.getTweets().success(function(response) { $rootScope.tweets = response });
 	    	TwitterUserFactory.getFollowers().success(function(response) { $rootScope.followers = response.users });
 	    	TwitterUserFactory.getFriends().success(function(response) { $rootScope.friends = response.users });
-	    	TwitterUserFactory.getMe().then(function(response) { $rootScope.me = response; debugger; });
+	    	TwitterUserFactory.getMe().then(function(response) { $rootScope.me = response; alert('User data loaded.'); });
 	    };
 	    
 	    if (provider === 'paypal') { 
 	    	$rootScope.paypalOAuthResult = response 
-	    	// $cookies.paypal_token = response.oauth_token; // enable storing cookies once app.run is configured to check login
-	    	$scope.paypalAuthorized = true;
 	    };
 		}).fail(function(error) {
 				console.log(error.message);
@@ -45,10 +43,6 @@ function(
 	}
 
 	$scope.logout = function() {
-		$cookies.twitter_token = null;
-		$cookies.paypal_token = null;
-		$scope.twitterAuthorized = false;
-		$scope.paypalAuthorized = false;
 	};
 
 }]);
