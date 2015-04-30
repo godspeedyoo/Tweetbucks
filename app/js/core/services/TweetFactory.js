@@ -14,7 +14,6 @@ app.factory('TweetFactory', ['$rootScope', 'LoginService',
 		.success(function(tweetData) {
 			tweets.tweets = tweetData;
 			$rootScope.$broadcast('tweetsUpdated');
-			debugger;
 		})
 	};
 

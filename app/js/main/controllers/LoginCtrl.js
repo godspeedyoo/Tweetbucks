@@ -1,21 +1,11 @@
 app.controller('LoginCtrl', [
-	'$rootScope',
 	'$scope', 
-	'$state', 
 	'TweetFactory',
-	'TwitterUserFactory',
-	'PaypalFactory',
-	'LoginService',
-	'$cookies', 
+	'LoginService', 
 function(
-		$rootScope, 
 		$scope, 
-		$state, 
 		TweetFactory, 
-		TwitterUserFactory, 
-		PaypalFactory,
-		LoginService,
-		$cookies) {
+		LoginService) {
 
 	// ********************* NOTES *********************
 	// instead of directly applying event services to $rootScope,
@@ -25,10 +15,6 @@ function(
 	// 			this.broadcast = function() { $rootScope.$broadcast("event")}
 	// 			this.listen = function(callback) {$rootScope.$on("event", callback)}
 	// })
-
-	$scope.loggedIn = function() { 
-		return $scope.authResult != null;
-	}
 
 	$scope.authenticate = function(provider) {
 		// OAuth handler via popup
@@ -40,36 +26,6 @@ function(
     });
 	};
 
-
 }]);
-	    	// Load all necessary data upon login and serve through app - need a strategy to accomodate live update or stream API
-	    	// TweetFactory.getTweets()
-	    	// 	.success(function(response) { 
-	    	// 		$rootScope.tweets = response;
-	    	// 	});
-	    	
-	    	// TwitterUserFactory.getFollowers()
-	    	// 	.success(function(response) { 
-	    	// 		$rootScope.followers = response.users;
-	    	// 	});
 
-	    	// TwitterUserFactory.getFriends()
-	    	// 	.success(function(response) { 
-	    	// 		$rootScope.friends = response.users;
-	    	// 	});
-	    	
-	    	// TwitterUserFactory.getMe()
-	    	// 	.then(function(response) { 
-	    	// 		$rootScope.me = response; 
-	    	// 		alert('User data loaded.');
-	    	// 		$state.go('app.home'); 
-	    	// 	});
-	    
-	    
-	    // if (provider === 'paypal') { 
-	    // 	alert('Paypal coming soon');
-	    // }
-	  
-	
-	
 

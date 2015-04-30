@@ -11,7 +11,6 @@ app.controller('HomeCtrl', [
 		TweetFactory,
 		LoginService) {
 
-
 	$scope.postTweet = function(text) {
 		TweetFactory.postTweet(text);
 	};
