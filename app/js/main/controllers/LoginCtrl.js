@@ -35,6 +35,7 @@ function(
 	    };
 	    
 	    if (provider === 'paypal') { 
+	    	debugger;
 	    	$rootScope.paypalOAuthResult = response 
 	    };
 		}).fail(function(error) {

@@ -1,12 +1,13 @@
-<div class="col-sm-3 text-left">
+<div class="col-sm-3 text-left container-fluid" ng-show="me">
 	<div class="row">
 		<img class="avatar-profile" ng-show="me.raw" ng-src="{{me.raw.profile_image_url_https.split('_normal.jpeg')[0] + '.jpeg' }}" alt="avatar"></img>
-		<h2>{{me.name}}</h2>
-		<p>{{me.bio}}</p>
-	</div>
-	<div clss="row" ng-show="me">
-		<h3>Following: {{me.raw.friends_count}}</h3>
-		<h3>Followers: {{me.raw.followers_count}}</h3>
+		<div class="bio">
+			<h3>{{me.name}}</h3>
+			<h5>@{{me.alias}}</h5>
+			<p class="text-muted">{{me.bio}}</p>
+			<h4>Following: {{me.raw.friends_count}}</h4>
+			<h4>Followers: {{me.raw.followers_count}}</h4>
+		</div>
 	</div>
 </div>
 

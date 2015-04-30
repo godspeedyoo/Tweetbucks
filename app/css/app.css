@@ -34,6 +34,7 @@ body {
   clear:both;
 }
 
+
 .avatar-profile {
   width: 90%;
   max-width: 250px;
@@ -44,6 +45,15 @@ body {
 .avatar-profile:before {
   content: "";
   border:2px solid #fff;
+}
+
+.bio {
+  display: inline-block;
+  margin-top: 15px;
+  margin-right: 15px;
+  float: right;
+  border: 1px solid #cfd9d7;
+  padding: 15px;
 }
 
 .panel {
@@ -60,6 +70,7 @@ body {
 
 .panel-tweet {
   height: 120px;
+  margin-top: 20px;
 }
 
 textarea {
