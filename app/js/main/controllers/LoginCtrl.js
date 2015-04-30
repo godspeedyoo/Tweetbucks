@@ -18,7 +18,7 @@ function(
 
 	$scope.authenticate = function(provider) {
 		// OAuth handler via popup
-		OAuth.initialize('ZEezHY42tLMdO9i2rKNBAgAxdak');
+		OAuth.initialize('EUmyEe_CdEV86HqLdmETxqF7TVk');
 		OAuth.popup(provider, {cache: true}).done(function(response) {
     	LoginService.updateOAuthResult(response);
   		TweetFactory.getTweets();
