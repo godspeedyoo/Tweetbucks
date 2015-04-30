@@ -1,4 +1,4 @@
-app.factory('DataService', function($rootScope) {
+app.factory('DataService', ['$rootScope', function($rootScope) {
 
 	var data = {};
 	data.twitterOAuthResult = {};
@@ -16,4 +16,4 @@ app.factory('DataService', function($rootScope) {
 
 	return data;
 
-})
+}]);
