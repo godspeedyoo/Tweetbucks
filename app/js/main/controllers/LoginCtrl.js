@@ -41,9 +41,7 @@ function(
 	// listen for tweets data update
 	$rootScope.$on('tweetsUpdated', function() {
 		$scope.tweets = DataService.tweets;
-		console.log("tweets updated");
 		$state.go('app.home'); 
-		debugger;
 	})
 
 

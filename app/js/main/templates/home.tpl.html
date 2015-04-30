@@ -1,12 +1,12 @@
-<div class="col-sm-3 text-left container-fluid">
+<div class="col-sm-3 text-left container-fluid" ng-show="currentUser">
 	<div class="row">
-		<img class="avatar-profile" ng-show="me.raw" ng-src="{{me.raw.profile_image_url_https.split('_normal.jpeg')[0] + '.jpeg' }}" alt="avatar"></img>
+		<img class="avatar-profile" ng-show="currentUser.raw" ng-src="{{currentUser.raw.profile_image_url_https.split('_normal.jpeg')[0] + '.jpeg' }}" alt="avatar"></img>
 		<div class="bio">
-			<h3>{{me.name}}</h3>
-			<h5>@{{me.alias}}</h5>
-			<p class="text-muted">{{me.bio}}</p>
-			<h4>Following: {{me.raw.friends_count}}</h4>
-			<h4>Followers: {{me.raw.followers_count}}</h4>
+			<h3>{{currentUser.name}}</h3>
+			<h5>@{{currentUser.alias}}</h5>
+			<p class="text-muted">{{currentUser.bio}}</p>
+			<h4>Following: {{currentUser.raw.friends_count}}</h4>
+			<h4>Followers: {{currentUser.raw.followers_count}}</h4>
 		</div>
 	</div>
 </div>
@@ -24,8 +24,8 @@
 			<div class="tweet-container" ng-repeat="tweet in tweets">
 				<div class="row">
 					<div class="tweet-header">
-						<img class="tweet-avatar" ng-show="me.avatar" ng-src="{{me.avatar}}"></img>
-						<span class="tweet-author">@{{me.alias}}</span> tweeted {{tweet.created_at | date: 'short'}}
+						<img class="tweet-avatar" ng-show="currentUser.avatar" ng-src="{{currentUser.avatar}}"></img>
+						<span class="tweet-author">@{{currentUser.alias}}</span> tweeted {{tweet.created_at | date: 'short'}}
 					</div>
 				</div>
 

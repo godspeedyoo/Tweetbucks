@@ -20,10 +20,14 @@ app.controller('HomeCtrl', [
 
 	// initialie data upon load
 	$scope.tweets = TweetFactory.tweets;
-	$scope.me = LoginService.currentUser;
+	$scope.currentUser = LoginService.currentUser;
 	// listen for tweets data update
 	$rootScope.$on('tweetsUpdated', function() {
 		$scope.tweets = TweetFactory.tweets;
+	})
+
+	$rootScope.$on('loginUpdated', function() {
+		$scope.currentUser = LoginService.currentUser;
 	})
 
 }]);
