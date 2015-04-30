@@ -1,7 +1,7 @@
 'use strict';
 
-app.factory('TweetFactory', ['$rootScope', 'LoginService',
-	function($rootScope, LoginService) {
+app.factory('TweetFactory', ['$rootScope', 'LoginService', '$state',
+	function($rootScope, LoginService, $state) {
 
 	var tweets = {};
 	tweets.tweets = {};
@@ -14,6 +14,7 @@ app.factory('TweetFactory', ['$rootScope', 'LoginService',
 		.success(function(tweetData) {
 			tweets.tweets = tweetData;
 			$rootScope.$broadcast('tweetsUpdated');
+			$state.go('app.home');
 		})
 	};
 

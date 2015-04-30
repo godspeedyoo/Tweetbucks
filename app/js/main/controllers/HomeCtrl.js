@@ -4,16 +4,22 @@ app.controller('HomeCtrl', [
 	'$state', 
 	'TweetFactory', 
 	'LoginService',
+	'$cookies',
 	function(
 		$scope, 
 		$rootScope, 
 		$state, 
 		TweetFactory,
-		LoginService) {
+		LoginService,
+		$cookies) {
 
 	$scope.postTweet = function(text) {
 		TweetFactory.postTweet(text);
 	};
+
+	// check for cached user and load user data if it exists (needs SSL)
+	if ($cookies.oauthio_provider_twitter) { LoginService.getCachedUser() }
+
 
 	// initialize data upon load
 	$scope.tweets = TweetFactory.tweets;

@@ -1,6 +1,7 @@
 'use strict';
 
-app.factory('LoginService', ['$rootScope', '$state', function($rootScope, $state) {
+app.factory('LoginService', ['$rootScope', '$state', '$cookies', 
+	function($rootScope, $state, $cookies) {
 
 	var login = {}
 	login.twitterOAuthResult = {};
@@ -10,8 +11,19 @@ app.factory('LoginService', ['$rootScope', '$state', function($rootScope, $state
 		this.twitterOAuthResult = result;
 		this.twitterOAuthResult.me().then(function(user) {
 			login.currentUser = user;
+		});
+	}
+
+	login.getCachedUser = function() {
+		console.log("attempting to retrieve user from cache");
+		// creates an oauth request object
+		var twitter = OAuth.create('twitter');
+
+		// must use SSL here to get access via local cache - try this from heroku
+		twitter.me().then(function(user) {
+			login.currentUser = user;
 			$rootScope.$broadcast("loginUpdated");
-			$state.go('app.home');
+			alert("User successfully retrieved from cache.");
 		})
 	}
 
