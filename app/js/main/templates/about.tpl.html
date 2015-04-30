@@ -1,1 +1,37 @@
-<p>This is about</p>
+<div class="container text-center">
+	<div class="jumbotron">
+		<h2>Purpose</h2>
+		<p>This is a hypothetical app designed to allow users to log into their Twitter account and send payments to their followers or friends</p>
+
+		<h2>Tech Stack</h2>
+		<p>A front-end heavy application built on Angular and running on Node and Express. I chose angular as the front end to continue learning and expanding my knowledge of this framework. I have deepened my grasp of its architecture and how to pass data between $scope, controllers, and services. Some of the skills learned or enhanced involve $rootScope broadcasting, storing data in a reusable service, and use of $states.</p>
+
+		<h2>Features</h2>
+			<h3>What Works</h3>
+			<ul>
+				<li>Users can successfully login to Twitter via OAuth</li>
+				<li>Users can see their recent tweets</li>
+				<li>Users can post a tweet (this is live)</li>
+				<li>Users can see their twitter bio</li>
+			</ul>
+
+			<h3>What Doesn't Work</h3>
+			<ul>
+				<li>Logout - I need to successfuly clear the cookie cache stored by Angular - $cookies.remove() is not registering as a function</li>
+				<li>Standard Twitter functionality, i.e. retweet, reply, etc.</li>
+				<li>Payments - Paypal integration</li>
+			</ul>
+		
+		<h2>Payments</h2>
+		<p>Payments have not been implemented, however there are several routes we can explore to implement this feature.</p>
+
+		<h2>API integration<h2>
+		<p>Utilizing Paypal API was my first plan, however, due to time constraints I have removed paypal integration in order to build on Twitter functionality.</p>
+
+		<p>My choice of node and express was more a matter of convenience - although I have never used these before, it seemed relatively easy and quick to set up. The goal was to focus on heavy front end development</p>
+
+		<h2>Hosting</h2>
+		<p>Heroku was an obvious choice as I have used it before and it is quick to set up. This was also a matter of convenience considering the cost of hosting elsewhere which would take away from development time.</p>
+
+	</div>
+</div>
