@@ -4,14 +4,12 @@ app.controller('HomeCtrl', [
 	'$state', 
 	'TweetFactory', 
 	'LoginService',
-	'DataService', 
 	function(
 		$scope, 
 		$rootScope, 
 		$state, 
 		TweetFactory,
-		LoginService, 
-		DataService) {
+		LoginService) {
 
 
 	$scope.postTweet = function(text) {
