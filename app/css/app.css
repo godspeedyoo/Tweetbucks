@@ -114,11 +114,11 @@ textarea {
 
 .tweet-container {
   padding: 15px;
-  border-bottom: 1px solid #cfd9D7;
 }
 
 .tweet-container:hover {
-  background-color: #eee;
+  padding: 20px;
+  border: 1px solid #55acee;
 }
 
 .tweet-text {
