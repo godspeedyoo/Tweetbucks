@@ -1,9 +1,8 @@
-app.controller('NavbarCtrl', ['$rootScope', '$scope', function($rootScope, $scope) {
+app.controller('NavbarCtrl', ['$rootScope', '$scope', function($scope) {
   $scope.items = ['Home', 'About', 'Contact'];
 
   $scope.logout = function() {
   	OAuth.clearCache();
-  	$rootScope = null;
   	alert("You have logged out.");
   }
 }]);

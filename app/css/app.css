@@ -18,6 +18,7 @@ body {
 }
 
 .nav {
+  height: 50px;
   list-style-type: none;
   padding: 0;
   background-color: #fff;
@@ -36,18 +37,23 @@ body {
   clear:both;
 }
 
+.navbar-item {
+  top: 5px;
+}
 
 .avatar-profile {
   width: 90%;
-  max-width: 250px;
+  max-width: 238px;
   border-radius: 5px;
   border: 5px solid #fff;
+  margin-right: 10px;
 }
 
 .avatar-profile:before {
   content: "";
   border:2px solid #fff;
 }
+
 
 .bio {
   background-color: #fff;
@@ -57,6 +63,28 @@ body {
   float: right;
   border: 1px solid #cfd9d7;
   padding: 15px;
+}
+
+@media (min-width: 768px) {
+  .bio {
+    float: none;
+  }
+}
+
+@media (max-width: 511px) {
+  .avatar-profile {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 15px;
+    max-width: none;
+
+  }
+  .bio {
+    width: 100%;
+    margin: 0px;
+    text-align: center;
+  }
 }
 
 .panel {
@@ -87,6 +115,10 @@ textarea {
 .tweet-container {
   padding: 15px;
   border-bottom: 1px solid #cfd9D7;
+}
+
+.tweet-container:hover {
+  background-color: #eee;
 }
 
 .tweet-text {
