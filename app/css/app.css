@@ -37,6 +37,13 @@ body {
 .avatar-profile {
   width: 90%;
   max-width: 250px;
+  border-radius: 5px;
+  border: 5px solid #55acee;
+}
+
+.avatar-profile:before {
+  content: "";
+  border:2px solid #fff;
 }
 
 .panel {
@@ -49,6 +56,10 @@ body {
 .panel-login {
   width: 330px;
   margin: 12% auto;
+}
+
+.panel-tweet {
+  height: 120px;
 }
 
 textarea {

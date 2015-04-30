@@ -1,24 +1,24 @@
 <div class="col-sm-3 text-left">
 	<div class="row">
-		<img class="avatar-profile" ng-show="me.avatar" ng-src="{{me.raw.profile_image_url_https}}" alt="avatar"></img>
+		<img class="avatar-profile" ng-show="me.raw" ng-src="{{me.raw.profile_image_url_https.split('_normal.jpeg')[0] + '.jpeg' }}" alt="avatar"></img>
 		<h2>{{me.name}}</h2>
 		<p>{{me.bio}}</p>
 	</div>
-	<div clss="row">
-		<p>Details here</p>
+	<div clss="row" ng-show="me">
+		<h3>Following: {{me.raw.friends_count}}</h3>
+		<h3>Followers: {{me.raw.followers_count}}</h3>
 	</div>
 </div>
 
 <div class="col-sm-9">
-<!-- <div class="tweet-box col-lg-8 col-lg-offset-2 col-md-6 col-md-offset-3 col-sm-offset-3 col-sm-5 col-xs-4 col-xs-offset-2"> -->
-	<div class="row">
-		<div class="panel">
+	<div class="row" ng-show="me">
+		<div class="panel panel-tweet">
 			<textarea ng-model="text" class="tweet-input-text"></textarea>
 			<span class="text-muted">{{140 - text.length}}</span><button ng-click="postTweet(text)"class="btn btn-primary pull-right tweet-button">Tweet</button>	
 		</div>	
 	</div>
 
-	<div class="row">
+	<div class="row" ng-show="tweets">
 		<div class="panel">
 			<div class="tweet-container" ng-repeat="tweet in tweets">
 				<div class="row">
@@ -38,7 +38,7 @@
 	</div>
 </div>
 
-<ul>
+<!-- <ul>
 	<h1>Me:</h1>
 	{{me}}
 	<h1>Followers:</h1>
@@ -46,3 +46,4 @@
 	<h1>Friends:</h1>
 	<li ng-repeat="friend in friends">{{friend}}</li>
 </ul>
+ -->
