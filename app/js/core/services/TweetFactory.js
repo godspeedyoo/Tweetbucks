@@ -19,7 +19,7 @@ app.factory('TweetFactory', ['$rootScope', 'LoginService',
 	};
 
 	tweets.postTweet = function(text) {
-		$rootScope.twitterOAuthResult.post(postUrl, {
+		LoginService.twitterOAuthResult.post(postUrl, {
 	  	data: {
     		status: text
 			}
