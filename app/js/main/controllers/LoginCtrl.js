@@ -6,6 +6,7 @@ app.controller('LoginCtrl', [
 	'TwitterUserFactory',
 	'PaypalFactory',
 	'DataService',
+	'LoginService',
 	'$cookies', 
 function(
 		$rootScope, 
@@ -15,6 +16,7 @@ function(
 		TwitterUserFactory, 
 		PaypalFactory,
 		DataService,
+		LoginService,
 		$cookies) {
 
 	// ********************* NOTES *********************
@@ -26,6 +28,10 @@ function(
 	// 			this.listen = function(callback) {$rootScope.$on("event", callback)}
 	// })
 
+	$scope.loggedIn = function() { 
+		return $scope.authResult != null;
+	}
+	
 	// specify event listener/callback for when my DataService values get updated
 	$rootScope.$on('loginUpdated',function() { 
 		// use specific session type if multiple logins are implemented i.e. $scope.paypalAuthResult
@@ -35,20 +41,23 @@ function(
 	// listen for tweets data update
 	$rootScope.$on('tweetsUpdated', function() {
 		$scope.tweets = DataService.tweets;
-		alert("tweets updated");
+		console.log("tweets updated");
+		$state.go('app.home'); 
+		debugger;
 	})
+
+
 
 	$scope.authenticate = function(provider) {
 		// OAuth handler via popup
 		OAuth.initialize('ZEezHY42tLMdO9i2rKNBAgAxdak');
 		OAuth.popup(provider, {cache: true}).done(function(response) {
-    	$rootScope.twitterOAuthResult = response;
-    	DataService.updateOAuthResult(response);
+    	LoginService.updateOAuthResult(response);
+  		TweetFactory.getTweets();
+    	console.log("OAuth initialized and complete.")
     });
 
-  	TweetFactory.getTweets().success(function(tweets) {
-  		DataService.updateTweets(tweets);
-  	});
+		console.log("DataService updated with tweets.");
 	};
 
 

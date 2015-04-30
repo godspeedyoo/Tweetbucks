@@ -1,4 +1,4 @@
-<div class="col-sm-3 text-left container-fluid" ng-show="me">
+<div class="col-sm-3 text-left container-fluid">
 	<div class="row">
 		<img class="avatar-profile" ng-show="me.raw" ng-src="{{me.raw.profile_image_url_https.split('_normal.jpeg')[0] + '.jpeg' }}" alt="avatar"></img>
 		<div class="bio">
@@ -12,14 +12,14 @@
 </div>
 
 <div class="col-sm-9">
-	<div class="row" ng-show="me">
+	<div class="row">
 		<div class="panel panel-tweet">
 			<textarea ng-model="text" class="tweet-input-text"></textarea>
 			<span class="text-muted">{{140 - text.length}}</span><button ng-click="postTweet(text)"class="btn btn-primary pull-right tweet-button">Tweet</button>	
 		</div>	
 	</div>
 
-	<div class="row" ng-show="tweets">
+	<div class="row">
 		<div class="panel">
 			<div class="tweet-container" ng-repeat="tweet in tweets">
 				<div class="row">
