@@ -6,6 +6,8 @@
 		<h2>Tech Stack</h2>
 		<p>A front-end heavy application built on Angular and running on Node and Express. I chose angular as the front end to continue learning and expanding my knowledge of this framework. I have deepened my grasp of its architecture and how to pass data between $scope, controllers, and services. Some of the skills learned or enhanced involve $rootScope broadcasting, storing data in a reusable service, and use of $states.</p>
 
+		<p>My choice of node and express was more a matter of convenience - although I have never used these before, it seemed relatively easy and quick to set up. The goal was to focus on heavy front end development</p>
+
 		<h2>Features</h2>
 			<h3>What Works</h3>
 			<ul>
@@ -13,25 +15,51 @@
 				<li>Users can see their recent tweets</li>
 				<li>Users can post a tweet (this is live)</li>
 				<li>Users can see their twitter bio</li>
+				<li>Responsive styling for home tab</li>
 			</ul>
 
-			<h3>What Doesn't Work</h3>
+			<h3>What I'd Like to Work</h3>
 			<ul>
 				<li>Logout - I need to successfuly clear the cookie cache stored by Angular - $cookies.remove() is not registering as a function</li>
 				<li>Standard Twitter functionality, i.e. retweet, reply, etc.</li>
 				<li>Payments - Paypal integration</li>
+				<li>More Responsive Styling - needs work on login buttons and tweet text overflow</li>
+				<li>Apply Angular Animate for state changes including loading icons</li>
+				<li>User profile picture and user bio (when stacked in large screen size) do not properly align</li>
+				<li>Visuals - could use some graphics, as of now it is a bare minimalist design</li>
+				<li>Properly formatted timestamps on tweets</li>
 			</ul>
 		
 		<h2>Payments</h2>
 		<p>Payments have not been implemented, however there are several routes we can explore to implement this feature.</p>
 
-		<h2>API integration<h2>
-		<p>Utilizing Paypal API was my first plan, however, due to time constraints I have removed paypal integration in order to build on Twitter functionality.</p>
+		<h3>API integration</h3>
+		<p>The plan would be to have a user authorize both Twitter and Paypal accounts. Simply put, a user would send a tweet to another user using a specific syntax like "!tweetbucks.pay @godspeedyoo $23". Before posting the tweet, the app listens for this syntax with regex and fires events.</p>
 
-		<p>My choice of node and express was more a matter of convenience - although I have never used these before, it seemed relatively easy and quick to set up. The goal was to focus on heavy front end development</p>
+		<p>These events would then do several things:</p>
+		<p>
+			<ul>
+				<li>Verify that the user is connected with paypal</li>
+				<li>Retrieve variables from proposed tweet: timestamp, amount, recipient</li>
+				<li>Check against user's paypal balance to see if payment is possible (or allow the payment handling to be done by redirecting the user to paypal)</li>
+				<li>Match the recipient's twitter handle to their verified paypal account and send the payment.</li>
+				<li>Verify recipient has received it, and automate posting a reply on the tweet by a verified third party (a bot twitter account) to provide confirmation.</li>
+			</ul>
+		</p>
+
+		<p>This strategy has some concerns. 1) this relies on users having accounts in two places. 2) The payments can only be made via the app, and not another Twitter client 3) Matching a recipient's twitter handle to their paypal account cannot be done unless the recipient provides that data to the app itself. Venmo API does allow for payments to be made to users without a registered account if an email is provided, however.</p>
 
 		<h2>Hosting</h2>
 		<p>Heroku was an obvious choice as I have used it before and it is quick to set up. This was also a matter of convenience considering the cost of hosting elsewhere which would take away from development time.</p>
+
+		<h2>Lessons Learned</h2>
+		<p>Exploring various technologies and choosing the right ones can be quite impactful. For example, I initially started out wanting to build a more robust application with a Rails back end, and realized quickly that I was sinking time into unnecessary work which takes away from the focus of this assignment - front end.</p>
+
+		<p>Front end development is a hell lot of fun. So is development in general. I had an insane amount of fun.</p>
+
+		<p>Architecture is important: if I had a better plan or knowledge of how to structure my front end code, it would have saved a good amount of time in my refactoring. My refactoring process involved pretty much breaking down my angular code and rebuilding.</p>
+
+
 
 	</div>
 </div>
