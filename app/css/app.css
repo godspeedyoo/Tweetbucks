@@ -38,6 +38,7 @@ body {
 }
 
 .navbar-item {
+  display: block;
   top: 5px;
 }
 
